@@ -9,18 +9,29 @@ import './index.css';
 // import Calculator from './test/Calculator'
 
 // 合成事件
-import SyntheticEvents from './test/event2'
+// import SyntheticEvents from './test/event2'
 // import SyntheticEvents from './test/event2.1'
 
+// setState原理分析
+import SetState from './test/setState_parent'
 
+// ref
+// import Ref from './test/ref'
+
+// 生命周期
+// import LifeCycle from './test/lifeCycle_parent_old' 
 
 // import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* <App /> */}
-    {/* <Calculator /> */}
-    <SyntheticEvents />
+    {/* <App />
+    <Calculator />
+    <SyntheticEvents /> */}
+    <SetState />
+    {/* <Ref /> */}
+    {/* <LifeCycle /> */}
+
   </React.StrictMode>,
   document.getElementById('root')
 );
