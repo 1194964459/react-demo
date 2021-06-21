@@ -22,8 +22,12 @@ import './index.css';
 // import LifeCycle from './test/lifeCycle_parent_old' 
 
 // Context
-import Context from './test/context/App'
+// import Context from './test/context/App'
 
+// 虚拟 Dom
+import VirtualDom from './test/virtualDom/index'
+
+// console.log('VirtualDom: ', VirtualDom)
 // import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
@@ -34,7 +38,9 @@ ReactDOM.render(
     {/* <SetState /> */}
     {/* <Ref /> */}
     {/* <LifeCycle /> */}
-    <Context />
+    {/* <Context /> */}
+    {/* <VirtualDom /> */}
+
 
   </React.StrictMode>,
   document.getElementById('root')
