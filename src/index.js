@@ -13,13 +13,16 @@ import './index.css';
 // import SyntheticEvents from './test/event2.1'
 
 // setState原理分析
-import SetState from './test/setState_parent'
+// import SetState from './test/setState_parent'
 
 // ref
 // import Ref from './test/ref'
 
 // 生命周期
 // import LifeCycle from './test/lifeCycle_parent_old' 
+
+// Context
+import Context from './test/context/App'
 
 // import reportWebVitals from './reportWebVitals';
 
@@ -28,9 +31,10 @@ ReactDOM.render(
     {/* <App />
     <Calculator />
     <SyntheticEvents /> */}
-    <SetState />
+    {/* <SetState /> */}
     {/* <Ref /> */}
     {/* <LifeCycle /> */}
+    <Context />
 
   </React.StrictMode>,
   document.getElementById('root')
