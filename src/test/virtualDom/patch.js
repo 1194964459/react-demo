@@ -122,4 +122,4 @@ function reorderChildren(node, moves) {
     });
 }
   
-  export default patch;
+export default patch;

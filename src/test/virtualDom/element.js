@@ -17,11 +17,11 @@ class Element {
         // 字段处理,可省略参数
         this.props = isObject(props) ? props : {};
         this.children = children 
-            || (!isNotEmptyObj(this.props) &&
-                ((isString(props) && [props]) || (isArray(props) && props))) 
+            || (!isNotEmptyObj(this.props) 
+                && ((isString(props) && [props]) || (isArray(props) && props))) 
             || [];
         
-            // 无论void后的表达式是什么，void操作符都会返回undefined
+        // 无论void后的表达式是什么，void操作符都会返回undefined, 注意：key属性 在插入和更新时，特别有用
         this.key = props ? props.key : void NOKEY;
 
         // 计算节点数
@@ -37,29 +37,32 @@ class Element {
         this.count = count;
     }
 
-render() {
-    // 根据tagName构建
-    const dom = document.createElement(this.tagName);
+    render() {
+        // 根据tagName构建
+        const dom = document.createElement(this.tagName);
 
-    // 设置props
-    objForEach(this.props, propName =>
-        dom.setAttribute(propName, this.props[propName])
-    );
+        // 设置props
+        objForEach(this.props, propName =>
+            dom.setAttribute(propName, this.props[propName])
+        );
 
-    // 渲染children
-    aryForEach(this.children, child => {
-        const childDom =
-            child instanceof Element
-            ? child.render() // 如果子节点也是虚拟DOM，递归构建DOM节点
-            : document.createTextNode(child); // 如果字符串，只构建文本节点
-        dom.appendChild(childDom);
-    });
-    return dom;
-}
+        // 渲染children
+        aryForEach(this.children, child => {
+            const childDom = child instanceof Element
+                    ? child.render() // 如果子节点也是虚拟DOM，递归构建DOM节点
+                    : document.createTextNode(child); // 如果字符串，只构建文本节点
+            dom.appendChild(childDom);
+        });
+        return dom;
+    }
 }
 
 // 改变传参方式,免去手动实例化
 export default function CreateElement(tagName, props, children) {
-    return new Element( tagName, props, children );
+    let ele = new Element( tagName, props, children );
+  
+    console.log('虚拟 Dom 为：', ele)
+  
+    return ele
 }
   

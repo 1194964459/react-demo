@@ -1,3 +1,11 @@
+/** DOM 差异类型：
+ * 替换掉原来的'节点'，
+ * 移动、删除、新增'子节点'
+ * 修改了节点的属性
+ * 对于文本节点，文本内容可能会改变。
+ */
+
+
 import { isString, objForEach, aryForEach, isNotEmptyObj } from "./util";
 import { REPLACE, REORDER, PROPS, TEXT } from "./common";
 import listDiff from "list-diff2";
@@ -9,7 +17,7 @@ import listDiff from "list-diff2";
  * 返回差异记录
  */
 function diff(oTree, nTree) {
-    // 节点位置
+    // 节点标识   在实际的代码中，会对新旧两棵树进行一个深度优先的遍历，这样每个节点都会有一个唯一的标记：
     let index = 0;
 
     // 差异记录
@@ -21,7 +29,7 @@ function diff(oTree, nTree) {
 }
 
 function dfsWalk(oNode, nNode, index, patches) {
-    const currentPatch = [];
+    const currentPatch = [];  // 当前节点的差异（与index强相关）
 
     // 首次渲染
     if (nNode === null) return;

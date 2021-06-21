@@ -1,3 +1,5 @@
+// 参考：https://github.com/livoras/blog/issues/13(很不错)
+
 import createElement from "./element";
 import diff from "./diff";
 import patch from "./patch";
