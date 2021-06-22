@@ -25,9 +25,16 @@ import './index.css';
 // import Context from './test/context/App'
 
 // 虚拟 Dom
-import VirtualDom from './test/virtualDom/index'
+// import VirtualDom from './test/virtualDom/index'
 
-// console.log('VirtualDom: ', VirtualDom)
+// 高阶组件
+// import Hoc from './test/Hoc/hoc1'
+import LocalUserName from './test/Hoc/hoc2'
+
+// 受控组件 与 非受控组件
+// import ControlCom from './test/controlCom'
+
+
 // import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
@@ -40,7 +47,10 @@ ReactDOM.render(
     {/* <LifeCycle /> */}
     {/* <Context /> */}
     {/* <VirtualDom /> */}
-
+    {/* <Hoc id="title" /> */}
+    {/* <ControlCom /> */}
+    <LocalUserName />
+    {/* <Password /> */}
 
   </React.StrictMode>,
   document.getElementById('root')
