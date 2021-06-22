@@ -29,13 +29,14 @@ import './index.css';
 
 // 高阶组件
 // import Hoc from './test/Hoc/hoc1'
-import LocalUserName from './test/Hoc/hoc2'
+// import LocalUserName from './test/Hoc/hoc2'
 
 // 受控组件 与 非受控组件
 // import ControlCom from './test/controlCom'
 
+// Hook
+import EffectHook from './test/hook/effectHook'
 
-// import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -49,14 +50,12 @@ ReactDOM.render(
     {/* <VirtualDom /> */}
     {/* <Hoc id="title" /> */}
     {/* <ControlCom /> */}
-    <LocalUserName />
+    {/* <LocalUserName /> */}
     {/* <Password /> */}
+
+    <EffectHook />
 
   </React.StrictMode>,
   document.getElementById('root')
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-// reportWebVitals();
